@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
+import SearchBar from '../search-bar';
 
 const Navbar = () => {
   return (
@@ -8,10 +9,7 @@ const Navbar = () => {
       <Link href="/" className="font-bold text-white text-2xl">
         CUY ANIME LIST
       </Link>
-      <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input type="email" placeholder="Search" />
-        <Button type="submit">Search</Button>
-      </div>
+      <SearchBar />
     </header>
   );
 };
