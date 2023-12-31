@@ -19,19 +19,13 @@ const AnimListModule = ({ title, images, id }: any) => {
           alt="gambar"
           width={350}
           height={350}
-          className="object-cover"
+          className="object-cover w-full max-h-64"
         />
       </CardHeader>
-      <CardContent>
-        <CardTitle>{title}</CardTitle>
+      <CardContent className="pt-4 pl-2">
+        <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
       </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
     </Card>
-    // <Link href={`/${id}`} className="cursor-pointer">
-    //   <h3 className="font-bold text-md md:text-xl p-4">{title}</h3>
-    // </Link>
   );
 };
 

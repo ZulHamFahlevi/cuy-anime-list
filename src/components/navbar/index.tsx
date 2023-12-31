@@ -9,7 +9,7 @@ const Navbar = () => {
         CUY ANIME LIST
       </Link>
       <div className="flex w-full max-w-sm items-center space-x-2">
-        <Input type="email" placeholder="Email" />
+        <Input type="email" placeholder="Search" />
         <Button type="submit">Search</Button>
       </div>
     </header>
