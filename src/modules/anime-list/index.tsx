@@ -1,31 +1,31 @@
-import Image from 'next/image';
+import { TTopAnimeList } from '@/types/top-anime-list';
 import Link from 'next/link';
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import CardAnimeList from './card-anime-list';
 
-const AnimListModule = ({ title, images, id }: any) => {
+const AnimListModule = ({
+  topAnime,
+  title,
+  linkTitle,
+  linkHref,
+}: {
+  topAnime: TTopAnimeList[];
+  title: string;
+  linkTitle: string;
+  linkHref: string;
+}) => {
   return (
-    <Card>
-      <CardHeader className="overflow-hidden p-0 rounded-t-md">
-        <Image
-          src={images}
-          alt="gambar"
-          width={350}
-          height={350}
-          className="object-cover w-full max-h-64"
-        />
-      </CardHeader>
-      <CardContent className="pt-4 pl-2">
-        <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
-      </CardContent>
-    </Card>
+    <>
+      <div className="p-5 flex flex-wrap justify-between items-center">
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <Link
+          href={linkHref}
+          className="text-md md:text-xl underline hover:text-blue-500 transition-all"
+        >
+          {linkTitle}
+        </Link>
+      </div>
+      <CardAnimeList topAnime={topAnime} />
+    </>
   );
 };
 
