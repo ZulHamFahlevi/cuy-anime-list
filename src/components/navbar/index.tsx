@@ -1,40 +1,16 @@
-'use client';
-
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center p-5 bg-sky-500">
-      <NavigationMenu>
-        <NavigationMenuList defaultValue="home">
-          <NavigationMenuItem value="home">
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem value="home2">
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+    <header className="flex flex-wrap justify-between items-center gap-2 p-5 bg-sky-500">
+      <Link href="/" className="font-bold text-white text-2xl">
+        CUY ANIME LIST
+      </Link>
       <div className="flex w-full max-w-sm items-center space-x-2">
         <Input type="email" placeholder="Email" />
-        <Button type="submit">Subscribe</Button>
+        <Button type="submit">Search</Button>
       </div>
     </header>
   );
