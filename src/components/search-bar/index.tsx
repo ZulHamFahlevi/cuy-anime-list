@@ -3,7 +3,7 @@
 import { BsSearch } from 'react-icons/bs';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
-import { FormEvent, useRef } from 'react';
+import { FormEvent, KeyboardEvent, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 const SearchBar = () => {
@@ -16,7 +16,7 @@ const SearchBar = () => {
     router.push(`/search/${keyword}`);
   };
 
-  const handleKeyPress = (event: React.KeyboardEvent) => {
+  const handleKeyPress = (event: KeyboardEvent) => {
     if (event.key === 'Enter') {
       handleSearch(event);
     }
@@ -29,7 +29,7 @@ const SearchBar = () => {
         placeholder="Cari anime..."
         className="w-full"
         ref={searchRef}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyPress}
       />
       <Button
         type="submit"
