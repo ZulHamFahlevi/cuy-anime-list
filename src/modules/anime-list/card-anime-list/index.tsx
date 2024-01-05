@@ -1,11 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TTopAnimeList } from '@/types/top-anime-list';
+import { TAnimeList } from '@/types/anime-list';
 import Image from 'next/image';
 
-const CardAnimeList = ({ animeList }: { animeList: TTopAnimeList[] }) => {
+const CardAnimeList = ({ animeList }: { animeList: TAnimeList[] }) => {
   return (
     <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-5 pb-5">
-      {animeList.map((item: TTopAnimeList) => (
+      {animeList.map((item: TAnimeList) => (
         <Card key={item.mal_id}>
           <CardHeader className="overflow-hidden p-0 rounded-t-md">
             <Image

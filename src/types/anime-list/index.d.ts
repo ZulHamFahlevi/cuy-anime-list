@@ -1,9 +1,9 @@
 export interface Root {
-  data: TTopAnimeList[];
+  data: TAnimeList[];
   pagination: Pagination;
 }
 
-export interface TTopAnimeList {
+export interface TAnimeList {
   mal_id: number;
   url: string;
   images: Images;

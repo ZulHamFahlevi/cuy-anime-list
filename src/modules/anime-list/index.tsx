@@ -1,4 +1,4 @@
-import { TTopAnimeList } from '@/types/top-anime-list';
+import { TAnimeList } from '@/types/anime-list';
 import Link from 'next/link';
 import CardAnimeList from './card-anime-list';
 
@@ -8,7 +8,7 @@ const AnimListModule = ({
   linkTitle,
   linkHref,
 }: {
-  animeList: TTopAnimeList[];
+  animeList: TAnimeList[];
   title: string;
   linkTitle?: string;
   linkHref?: string;
