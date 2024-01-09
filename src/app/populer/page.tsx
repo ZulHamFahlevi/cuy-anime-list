@@ -1,7 +1,8 @@
+import Container from '@/components/container';
 import React from 'react';
 
 const PopulerPage = () => {
-  return <div>PopulerPage</div>;
+  return <Container>PopulerPage</Container>;
 };
 
 export default PopulerPage;

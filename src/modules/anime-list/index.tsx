@@ -16,11 +16,11 @@ const AnimListModule = ({
   return (
     <>
       <div className="p-5 flex flex-wrap justify-between items-center">
-        <h1 className="text-2xl font-bold">{title}</h1>
+        <h1 className="text-2xl text-color-light font-bold">{title}</h1>
         {linkTitle && linkHref ? (
           <Link
             href={linkHref}
-            className="text-md md:text-xl underline hover:text-blue-500 transition-all"
+            className="text-md md:text-xl text-color-light underline hover:text-color-primary/80 transition-all"
           >
             {linkTitle}
           </Link>

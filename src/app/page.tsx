@@ -1,3 +1,4 @@
+import Container from '@/components/container';
 import AnimListModule from '@/modules/anime-list';
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ export default async function HomePage() {
   const pagination = response.data.pagination;
 
   return (
-    <main>
+    <Container>
       <AnimListModule
         animeList={topAnime}
         title="Paling Populer"
@@ -22,6 +23,6 @@ export default async function HomePage() {
         linkTitle="Ikuti Sekarang"
         linkHref="/new"
       />
-    </main>
+    </Container>
   );
 }

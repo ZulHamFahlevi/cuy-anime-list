@@ -1,3 +1,4 @@
+import Container from '@/components/container';
 import AnimListModule from '@/modules/anime-list';
 import axios from 'axios';
 
@@ -14,14 +15,15 @@ const SearchPage = async ({ params }: TSearchParam) => {
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`
   );
   const searchAnime = response.data.data;
+  const decodedKeyword = decodeURIComponent(keyword.replace(/\+/g, ' '));
 
   return (
-    <main>
+    <Container>
       <AnimListModule
         animeList={searchAnime}
-        title={`Pencarian Untuk "${keyword}"`}
+        title={`Pencarian Untuk "${decodedKeyword}"`}
       />
-    </main>
+    </Container>
   );
 };
 
