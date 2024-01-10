@@ -1,6 +1,6 @@
-export interface Root {
+export interface TAnime {
   data: TAnimeList[];
-  pagination: Pagination;
+  pagination: TPagination;
 }
 
 export interface TAnimeList {
@@ -150,7 +150,7 @@ export interface Demographic {
   url: string;
 }
 
-export interface Pagination {
+export interface TPagination {
   last_visible_page: number;
   has_next_page: boolean;
   items: Items;

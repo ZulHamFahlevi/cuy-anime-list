@@ -6,8 +6,7 @@ export default async function HomePage() {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
   );
-  const topAnime = response.data.data;
-  const pagination = response.data.pagination;
+  const topAnime = response.data;
 
   return (
     <Container>
