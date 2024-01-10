@@ -15,7 +15,7 @@ const SearchPage = async ({ params }: TSearchParam) => {
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`
   );
   const searchAnime = response.data.data;
-  const decodedKeyword = decodeURIComponent(keyword.replace(/\+/g, ' '));
+  const decodedKeyword = decodeURI(keyword);
 
   // Check if title exists in the animeList
   const titleExists = searchAnime.some((anime: any) => anime.title);

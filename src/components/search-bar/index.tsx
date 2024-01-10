@@ -9,7 +9,6 @@ import { useRouter } from 'next/navigation';
 const SearchBar = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
-  console.log(searchRef);
 
   const handleSearch = (event: FormEvent) => {
     if (searchRef.current?.value) {
