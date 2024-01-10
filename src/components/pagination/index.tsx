@@ -1,20 +1,22 @@
-import React from 'react';
-import { Button } from '../ui/button';
+import { usePagination } from '@/store/pagination';
 import { TPagination } from '@/types/anime-list';
+import { Button } from '../ui/button';
 
-const Pagination = ({
-  page,
-  setPage,
-  dataPagination,
-}: {
-  page: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  dataPagination: TPagination;
-}) => {
+const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
+  const { page, prev, next } = usePagination();
+
+  const ScrollToTop = () => {
+    scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="flex justify-center items-center gap-2 mt-5">
       <Button
-        onClick={() => setPage((prev) => (prev === 1 ? 1 : prev - 1))}
+        type="button"
+        onClick={() => {
+          prev();
+          ScrollToTop();
+        }}
         disabled={page === 1}
       >
         Prev
@@ -22,7 +24,16 @@ const Pagination = ({
       <p className="text-xl text-white font-semibold">
         {page} of {dataPagination?.last_visible_page}
       </p>
-      <Button onClick={() => setPage((prev) => prev + 1)}>Next</Button>
+      <Button
+        type="button"
+        onClick={() => {
+          next();
+          ScrollToTop();
+        }}
+        disabled={page === dataPagination?.last_visible_page}
+      >
+        Next
+      </Button>
     </div>
   );
 };
