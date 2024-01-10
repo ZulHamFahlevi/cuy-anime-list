@@ -17,12 +17,23 @@ const SearchPage = async ({ params }: TSearchParam) => {
   const searchAnime = response.data.data;
   const decodedKeyword = decodeURIComponent(keyword.replace(/\+/g, ' '));
 
+  // Check if title exists in the animeList
+  const titleExists = searchAnime.some((anime: any) => anime.title);
+
   return (
     <Container>
-      <AnimListModule
-        animeList={searchAnime}
-        title={`Pencarian Untuk "${decodedKeyword}"`}
-      />
+      {titleExists ? (
+        <AnimListModule
+          animeList={searchAnime}
+          title={`Pencarian Untuk "${decodedKeyword}"`}
+        />
+      ) : (
+        <div className="flex justify-center items-center h-screen">
+          <h1 className="text-2xl text-white font-semibold">
+            Tidak ada hasil untuk {decodedKeyword}
+          </h1>
+        </div>
+      )}
     </Container>
   );
 };

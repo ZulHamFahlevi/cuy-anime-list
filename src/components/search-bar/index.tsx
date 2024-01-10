@@ -9,11 +9,14 @@ import { useRouter } from 'next/navigation';
 const SearchBar = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  console.log(searchRef);
 
   const handleSearch = (event: FormEvent) => {
-    event.preventDefault();
-    const keyword = searchRef.current?.value;
-    router.push(`/search/${keyword}`);
+    if (searchRef.current?.value) {
+      event.preventDefault();
+      const keyword = searchRef.current?.value;
+      router.push(`/search/${keyword}`);
+    }
   };
 
   const handleKeyPress = (event: KeyboardEvent) => {
