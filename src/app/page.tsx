@@ -1,12 +1,9 @@
 import Container from '@/components/container';
-import AnimListModule from '@/modules/anime-list';
-import axios from 'axios';
+import { getAnimeResponse } from '@/hooks/apiCall';
+import AnimListModule from '@/modules/animeList';
 
 export default async function HomePage() {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
-  );
-  const topAnime = response.data;
+  const topAnime = await getAnimeResponse('top/anime', 'limit=8');
 
   return (
     <Container>

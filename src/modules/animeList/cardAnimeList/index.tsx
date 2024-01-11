@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { TAnimeList } from '@/types/anime-list';
+import { TAnimeList } from '@/types/animeList';
 import Image from 'next/image';
 
 const CardAnimeList = ({ animeList }: { animeList: TAnimeList[] }) => {

@@ -1,6 +1,6 @@
-import { TAnime } from '@/types/anime-list';
+import { TAnime } from '@/types/animeList';
 import Link from 'next/link';
-import CardAnimeList from './card-anime-list';
+import CardAnimeList from './cardAnimeList';
 
 const AnimListModule = ({
   animeList,
@@ -28,7 +28,7 @@ const AnimListModule = ({
           ) : null}
         </div>
       ) : null}
-      <CardAnimeList animeList={animeList.data} />
+      <CardAnimeList animeList={animeList?.data} />
     </>
   );
 };

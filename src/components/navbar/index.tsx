@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import SearchBar from '../search-bar';
+import SearchBar from '../searchBar';
 
 const Navbar = () => {
   return (

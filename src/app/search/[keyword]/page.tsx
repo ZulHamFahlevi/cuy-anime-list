@@ -1,6 +1,6 @@
 import Container from '@/components/container';
-import AnimListModule from '@/modules/anime-list';
-import axios from 'axios';
+import { getAnimeResponse } from '@/hooks/apiCall';
+import AnimListModule from '@/modules/animeList';
 
 type TSearchParam = {
   params: {
@@ -11,18 +11,12 @@ type TSearchParam = {
 const SearchPage = async ({ params }: TSearchParam) => {
   const { keyword } = params;
 
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`
-  );
-  const searchAnime = response.data.data;
+  const searchAnime = await getAnimeResponse('anime', `q=${keyword}`);
   const decodedKeyword = decodeURI(keyword);
-
-  // Check if title exists in the animeList
-  const titleExists = searchAnime.some((anime: any) => anime.title);
 
   return (
     <Container>
-      {titleExists ? (
+      {searchAnime.data.length > 0 ? (
         <AnimListModule
           animeList={searchAnime}
           title={`Pencarian Untuk "${decodedKeyword}"`}

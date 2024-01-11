@@ -1,5 +1,5 @@
 import { usePagination } from '@/store/pagination';
-import { TPagination } from '@/types/anime-list';
+import { TPagination } from '@/types/animeList';
 import { Button } from '../ui/button';
 
 const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
