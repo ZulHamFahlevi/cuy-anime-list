@@ -1,6 +1,6 @@
 import { TAnime } from '@/types/animeList';
 import Link from 'next/link';
-import CardAnimeList from './cardAnimeList';
+import CardAnimeList from '@/components/cardAnimeList';
 
 const AnimListModule = ({
   animeList,

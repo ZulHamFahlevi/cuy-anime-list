@@ -1,9 +1,9 @@
 import HeaderMenu from '@/components/headerMenu';
+import LoadingComponent from '@/components/loading';
 import Pagination from '@/components/pagination';
 import { TAnime } from '@/types/animeList';
-import React from 'react';
 import AnimListModule from '../animeList';
-import LoadingComponent from '@/components/loading';
+import SkelotonCard from '@/components/skelotonCard';
 
 const PopulerModule = ({
   data,
@@ -14,14 +14,10 @@ const PopulerModule = ({
   page: number;
   isLoading: boolean;
 }) => {
-  if (isLoading) {
-    return <LoadingComponent />;
-  }
-
   return (
     <div className="my-5">
       <HeaderMenu title={`ANIME TERPOPULER #${page}`} />
-      <AnimListModule animeList={data} />
+      {isLoading ? <SkelotonCard /> : <AnimListModule animeList={data} />}
       <Pagination dataPagination={data?.pagination} />
     </div>
   );
