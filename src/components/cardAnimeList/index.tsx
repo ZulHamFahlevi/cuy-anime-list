@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/card';
 import { TAnimeList } from '@/types/animeList';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CardAnimeList = ({ animeList }: { animeList: TAnimeList[] }) => {
   return (
@@ -29,7 +30,9 @@ const CardAnimeList = ({ animeList }: { animeList: TAnimeList[] }) => {
             </CardTitle>
           </CardContent>
           <CardFooter className="pl-2 sm:pl-4">
-            <Button>Lihat Detail</Button>
+            <Button asChild>
+              <Link href={`/anime/${item.mal_id}`}>Lihat Detail</Link>
+            </Button>
           </CardFooter>
         </Card>
       ))}

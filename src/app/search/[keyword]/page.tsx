@@ -23,7 +23,7 @@ const SearchPage = async ({ params }: TSearchParam) => {
         />
       ) : (
         <div className="flex justify-center items-center h-screen">
-          <h1 className="text-2xl text-white font-semibold">
+          <h1 className="text-2xl text-color-light font-semibold">
             Tidak ada hasil untuk {decodedKeyword}
           </h1>
         </div>

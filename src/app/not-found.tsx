@@ -5,7 +5,7 @@ import React from 'react';
 
 const PageNotFound = () => {
   return (
-    <div className="text-white flex flex-col justify-center items-center gap-5 w-full min-h-[80vh]">
+    <div className="text-color-light flex flex-col justify-center items-center gap-5 w-full min-h-[80vh]">
       <Image
         src="/404.svg"
         alt="404 page"

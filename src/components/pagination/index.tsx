@@ -21,7 +21,7 @@ const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
       >
         Prev
       </Button>
-      <p className="text-xl text-white font-semibold">
+      <p className="text-xl text-color-light font-semibold">
         {page} of {dataPagination?.last_visible_page}
       </p>
       <Button
