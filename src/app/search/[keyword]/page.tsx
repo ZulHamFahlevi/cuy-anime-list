@@ -1,5 +1,5 @@
 import Container from '@/components/container';
-import { getAnimeResponse } from '@/hooks/apiCall';
+import { getAnimeResponse } from '@/lib/apiCall';
 import AnimListModule from '@/modules/animeList';
 
 type TSearchParam = {

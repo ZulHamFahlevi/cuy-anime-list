@@ -3,7 +3,7 @@ import { TPagination } from '@/types/animeList';
 import { Button } from '../ui/button';
 
 const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
-  const { page, prev, next } = usePagination();
+  const { page, previousPage, nextPage } = usePagination();
 
   const ScrollToTop = () => {
     scrollTo({ top: 0, behavior: 'smooth' });
@@ -14,7 +14,7 @@ const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
       <Button
         type="button"
         onClick={() => {
-          prev();
+          previousPage();
           ScrollToTop();
         }}
         disabled={page === 1}
@@ -27,7 +27,7 @@ const Pagination = ({ dataPagination }: { dataPagination: TPagination }) => {
       <Button
         type="button"
         onClick={() => {
-          next();
+          nextPage();
           ScrollToTop();
         }}
         disabled={page === dataPagination?.last_visible_page}
