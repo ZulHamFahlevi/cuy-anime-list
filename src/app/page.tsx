@@ -1,9 +1,19 @@
 import Container from '@/components/container';
-import { getAnimeResponse } from '@/lib/apiCall';
+import {
+  getAnimeResponse,
+  getNestedAnimeResponse,
+  reproduce,
+} from '@/lib/apiCall';
 import AnimListModule from '@/modules/animeList';
 
 export default async function HomePage() {
   const topAnime = await getAnimeResponse('top/anime', 'limit=8');
+  let recommendedAnime = await getNestedAnimeResponse(
+    'recommendations/anime',
+    'entry'
+  );
+
+  recommendedAnime = reproduce(recommendedAnime, 4);
 
   return (
     <Container>
@@ -14,8 +24,8 @@ export default async function HomePage() {
         linkHref="/populer"
       />
       <AnimListModule
-        animeList={topAnime}
-        title="Paling Terbaru"
+        animeList={recommendedAnime}
+        title="Rekomendasi"
         linkTitle="Ikuti Sekarang"
         linkHref="/new"
       />
