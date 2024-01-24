@@ -11,7 +11,7 @@ const SearchBar = () => {
   const router = useRouter();
 
   const handleSearch = (event: FormEvent) => {
-    if (searchRef.current?.value) {
+    if (searchRef.current?.value.trim() !== '') {
       event.preventDefault();
       const keyword = searchRef.current?.value;
       router.push(`/search/${keyword}`);
