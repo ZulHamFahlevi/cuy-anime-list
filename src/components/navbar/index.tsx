@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SearchBar from '../searchBar';
+import UserActionButton from './userActionButton';
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
           CUY ANIME LIST
         </Link>
         <SearchBar />
+        <UserActionButton />
       </div>
     </header>
   );
